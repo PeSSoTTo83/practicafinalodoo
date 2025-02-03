@@ -1,0 +1,33 @@
+
+<odoo>
+    <!-- Acción para la vista de empleados -->
+    <record id="empleado_view_tree_action" model="ir.actions.act_window">
+        <field name="name">Lista de Empleados</field>
+        <field name="res_model">empleado.empleado</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Crea nuevos empleados</p>
+        </field>
+    </record>
+
+    <!-- Definir vista tipo árbol para empleados -->
+    <record id="empleado_tree_view" model="ir.ui.view">
+        <field name="name">empleado.empleado.tree</field>
+        <field name="model">empleado.empleado</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de Empleados">
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="departamento"/>
+                <field name="salario"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Menú para acceder a empleados -->
+    <menuitem id="empleado_menu_root" name="Empleados" sequence="1"/>
+
+    <!-- Submenú que apunta a la acción de la vista de empleados -->
+    <menuitem id="empleado_submenu" parent="empleado_menu_root"
+              action="empleado_view_tree_action" name="Listado de Empleados" sequence="1"/>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+declaracion_security_jefe,permisos_modulo_declaracion,model_declaracion_declaracion,,1,1,1,1
+declaracion_security_empleado,permisos_modulo_declaracion,model_declaracion_declaracion,,1,0,0,0
+
